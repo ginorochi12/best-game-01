@@ -1,0 +1,50 @@
+/* NEON DRIFT — page shell. The game itself is drawn on the canvas; this file
+   only centers it on a dark page and keeps the hint line readable. */
+:root {
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #04060d;
+  color: #9fb3c8;
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  width: 100%;
+}
+#game {
+  display: block;
+  width: min(960px, calc(100vw - 32px));
+  height: auto;
+  aspect-ratio: 960 / 600;
+  border: 1px solid #16324a;
+  border-radius: 10px;
+  background: #050a14;
+  box-shadow: 0 0 0 1px #000, 0 0 48px rgba(53, 240, 208, 0.08), 0 24px 60px rgba(0, 0, 0, 0.6);
+  cursor: crosshair;
+  touch-action: none;
+}
+#hint {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #5d7a94;
+  text-align: center;
+}
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
